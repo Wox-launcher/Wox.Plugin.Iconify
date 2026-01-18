@@ -1,0 +1,20 @@
+{
+    "Id": "replaceme_with_id",
+    "TriggerKeywords": [
+        "replaceme_with_keyword"
+    ],
+    "Name": "replaceme_with_name",
+    "Description": "replaceme_with_description",
+    "Author": "",
+    "Version": "0.0.1",
+    "MinWoxVersion": "2.0.0",
+    "Runtime": "python",
+    "Website": "replaceme_with_website",
+    "Entry": "replaceme_with_projectname/main.py",
+    "Icon": "relative:image/app.png",
+    "SupportedOS": [
+        "windows",
+        "linux",
+        "darwin"
+    ]
+}
