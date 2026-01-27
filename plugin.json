@@ -1,16 +1,16 @@
 {
-    "Id": "replaceme_with_id",
+    "Id": "8f8d2954-4ef6-4b0f-ba53-a816fe095acc",
     "TriggerKeywords": [
-        "replaceme_with_keyword"
+        "icon"
     ],
-    "Name": "replaceme_with_name",
-    "Description": "replaceme_with_description",
-    "Author": "",
+    "Name": "Iconify",
+    "Description": "Search iconify icons - Home of open source icon sets",
+    "Author": "wox-launcher",
     "Version": "0.0.1",
     "MinWoxVersion": "2.0.0",
     "Runtime": "python",
-    "Website": "replaceme_with_website",
-    "Entry": "replaceme_with_projectname/main.py",
+    "Website": "https://github.com/wox-launcher/Wox.Plugin.Iconify",
+    "Entry": "iconify/main.py",
     "Icon": "relative:image/app.png",
     "SupportedOS": [
         "windows",

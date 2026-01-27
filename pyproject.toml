@@ -1,10 +1,10 @@
 [project]
-name = "replaceme_with_projectname"
+name = "iconify"
 version = "0.1.0"
-description = "replace_with_description"
+description = "Search iconify icons - Home of open source icon sets"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["wox-plugin==0.0.67"]
+dependencies = ["wox-plugin==0.0.70"]
 
 [project.optional-dependencies]
 dev = ["ruff", "mypy"]
