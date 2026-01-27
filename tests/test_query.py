@@ -36,8 +36,11 @@ class TestMyPlugin(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(results[0].title, "mdi:home")
         self.assertEqual(results[1].title, "mdi:account")
         
-        args, _ = mock_urlopen.call_args
-        self.assertIn("query=test", args[0])
+        args, kwargs = mock_urlopen.call_args
+        
+        request_obj = args[0]
+        self.assertEqual(request_obj.get_header('User-agent'), 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+        self.assertIn("query=test", request_obj.full_url)
 
 if __name__ == "__main__":
     unittest.main()

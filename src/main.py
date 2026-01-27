@@ -66,8 +66,13 @@ class MyPlugin(Plugin):
             # Iconify search API
             params = urllib.parse.urlencode({"query": search_term, "limit": 50})
             api_url = f"https://api.iconify.design/search?{params}"
+            
+            req = urllib.request.Request(
+                api_url, 
+                headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+            )
 
-            with urllib.request.urlopen(api_url) as response:
+            with urllib.request.urlopen(req) as response:
                 data = json.loads(response.read().decode("utf-8"))
 
             icons = data.get("icons", [])
