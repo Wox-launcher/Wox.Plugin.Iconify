@@ -3,15 +3,56 @@
     "TriggerKeywords": [
         "icon"
     ],
-    "Name": "Iconify",
-    "Description": "Search iconify icons - Home of open source icon sets",
+    "Name": "i18n:plugin_name",
+    "Description": "i18n:plugin_description",
     "Author": "wox-launcher",
-    "Version": "0.0.1",
+    "Version": "0.0.2",
     "MinWoxVersion": "2.0.0",
     "Runtime": "python",
     "Website": "https://github.com/wox-launcher/Wox.Plugin.Iconify",
-    "Entry": "iconify/main.py",
+    "Entry": "src/main.py",
     "Icon": "relative:image/app.png",
+    "Features": [
+        {
+            "Name": "gridLayout",
+            "Params": {
+                "Columns": 10,
+                "ItemPadding": 12,
+                "ItemMargin": 6,
+                "ShowTitle": false
+            }
+        }
+    ],
+    "I18n": {
+        "en_US": {
+            "plugin_name": "Iconify",
+            "plugin_description": "Search Iconify icons - Home of open source icon sets",
+            "action_copy_svg": "Copy SVG",
+            "action_copy_url": "Copy URL",
+            "action_copy_name": "Copy Name",
+            "notify_name_copied": "Copied: {name}",
+            "notify_url_copied": "Copied URL to clipboard",
+            "notify_svg_copied": "Copied SVG to clipboard",
+            "notify_svg_fetch_error": "Error fetching SVG: {error}",
+            "result_subtitle": "Press Enter to copy SVG{suffix}",
+            "result_subtitle_color_suffix": " ({color})",
+            "error_search_title": "Error searching icons"
+        },
+        "zh_CN": {
+            "plugin_name": "Iconify",
+            "plugin_description": "搜索 Iconify 图标资源",
+            "action_copy_svg": "复制 SVG",
+            "action_copy_url": "复制 URL",
+            "action_copy_name": "复制图标名称",
+            "notify_name_copied": "已复制: {name}",
+            "notify_url_copied": "已复制 URL 到剪贴板",
+            "notify_svg_copied": "已复制 SVG 到剪贴板",
+            "notify_svg_fetch_error": "获取 SVG 失败: {error}",
+            "result_subtitle": "按回车复制 SVG{suffix}",
+            "result_subtitle_color_suffix": "（{color}）",
+            "error_search_title": "搜索图标失败"
+        }
+    },
     "SupportedOS": [
         "windows",
         "linux",

@@ -25,18 +25,18 @@ format:
 
 build: lint format
 	rm -rf $(DIST_DIR)
-	mkdir -p $(DIST_DIR)/iconify
+	mkdir -p $(DIST_DIR)/src
 	mkdir -p $(DIST_DIR)/dependencies
 	uv pip freeze > requirements.txt
 	uv pip install -r requirements.txt --target $(DIST_DIR)/dependencies
 	rm requirements.txt
-	cp -r $(SRC_DIR)/* $(DIST_DIR)/iconify/
+	cp -r $(SRC_DIR)/* $(DIST_DIR)/src/
 	find $(DIST_DIR)/dependencies -type d -name "*.dist-info" -o -name "*.egg-info" | xargs rm -rf
 	find $(DIST_DIR)/dependencies -type f -name "__editable__*" -o -name ".lock" | xargs rm -f
 	rm -rf $(DIST_DIR)/dependencies/*mypy*
 	rm -rf $(DIST_DIR)/dependencies/ruff
 	rm -rf $(DIST_DIR)/dependencies/bin
-	echo 'import os\nimport sys\n\n# Add dependencies directory to Python path\ndeps_dir = os.path.join(os.path.dirname(__file__), "dependencies")\nif deps_dir not in sys.path:\n    sys.path.insert(0, deps_dir)\n\n# Import your actual plugin code\nfrom .iconify.main import plugin\n\n__all__ = ["plugin"]' > $(DIST_DIR)/__init__.py
+	find $(DIST_DIR) -type d -name "__pycache__" | xargs rm -rf
 	cp plugin.json $(DIST_DIR)/plugin.json
 	mkdir -p $(DIST_DIR)/image
 	cp image/* $(DIST_DIR)/image/

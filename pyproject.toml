@@ -1,6 +1,6 @@
 [project]
 name = "iconify"
-version = "0.1.0"
+version = "0.0.6"
 description = "Search iconify icons - Home of open source icon sets"
 readme = "README.md"
 requires-python = ">=3.10"
