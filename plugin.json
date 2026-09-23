@@ -3,30 +3,30 @@
     "TriggerKeywords": [
         "icon"
     ],
+    "TriggerQueryHints": {
+        "icon": {
+            "Elements": [
+                {
+                    "Id": "search",
+                    "Kind": "argument",
+                    "Placeholder": "i18n:query_hint_search"
+                }
+            ]
+        }
+    },
     "Name": "i18n:plugin_name",
     "Description": "i18n:plugin_description",
     "Author": "wox-launcher",
-    "Version": "0.0.2",
-    "MinWoxVersion": "2.0.0",
+    "Version": "0.1.0",
+    "MinWoxVersion": "2.4.4",
     "Runtime": "python",
     "Website": "https://github.com/wox-launcher/Wox.Plugin.Iconify",
     "Entry": "src/main.py",
     "Icon": "relative:image/app.png",
-    "Features": [
-        {
-            "Name": "gridLayout",
-            "Params": {
-                "Columns": 10,
-                "ItemPadding": 12,
-                "ItemMargin": 6,
-                "ShowTitle": false
-            }
-        }
-    ],
     "I18n": {
         "en_US": {
             "plugin_name": "Iconify",
-            "plugin_description": "Search Iconify icons - Home of open source icon sets",
+            "plugin_description": "Search a local copy of the Iconify icon sets",
             "action_copy_svg": "Copy SVG",
             "action_copy_url": "Copy URL",
             "action_copy_name": "Copy Name",
@@ -36,11 +36,43 @@
             "notify_svg_fetch_error": "Error fetching SVG: {error}",
             "result_subtitle": "Press Enter to copy SVG{suffix}",
             "result_subtitle_color_suffix": " ({color})",
-            "error_search_title": "Error searching icons"
+            "error_search_title": "Error searching icons",
+            "download_title": "Download Iconify icons",
+            "download_subtitle": "Press Enter to download the full collection{size} into the local cache. Search works offline after that.",
+            "download_action": "Download Iconify icons{size}",
+            "download_size_suffix": " ({size})",
+            "progress_starting_title": "Downloading Iconify icons",
+            "progress_starting_subtitle": "Connecting",
+            "progress_starting_action": "Starting Iconify download",
+            "progress_downloading_title": "Downloading Iconify icons",
+            "progress_downloading_subtitle": "{done} / {total} ({percent}%)",
+            "progress_downloading_action": "Downloading Iconify icons {done} / {total} ({percent}%)",
+            "progress_downloading_unknown_subtitle": "{done}",
+            "progress_downloading_unknown_action": "Downloading Iconify icons {done}",
+            "progress_verifying_title": "Checking Iconify download",
+            "progress_verifying_subtitle": "Verifying the archive",
+            "progress_verifying_action": "Checking Iconify download",
+            "progress_indexing_title": "Building the local icon index",
+            "progress_indexing_subtitle": "{done} / {total} icon sets{detail}",
+            "progress_indexing_detail_suffix": " · {detail}",
+            "progress_indexing_action": "Indexing Iconify icons {done} / {total}",
+            "download_failed_title": "Iconify download failed",
+            "download_failed_subtitle": "{error}",
+            "download_retry_action": "Retry Iconify download",
+            "download_ready_title": "Iconify icons are ready",
+            "download_ready_subtitle": "Type an icon name to search locally",
+            "download_ready_action": "Iconify icons are ready",
+            "cache_unavailable_title": "Iconify cache is unavailable",
+            "cache_unavailable_subtitle": "{error}",
+            "query_hint_search": "search",
+            "refinement_palette": "Color",
+            "refinement_palette_all": "All",
+            "refinement_palette_color": "Colorful",
+            "refinement_palette_mono": "Monochrome"
         },
         "zh_CN": {
             "plugin_name": "Iconify",
-            "plugin_description": "搜索 Iconify 图标资源",
+            "plugin_description": "搜索本地的 Iconify 图标库",
             "action_copy_svg": "复制 SVG",
             "action_copy_url": "复制 URL",
             "action_copy_name": "复制图标名称",
@@ -50,7 +82,39 @@
             "notify_svg_fetch_error": "获取 SVG 失败: {error}",
             "result_subtitle": "按回车复制 SVG{suffix}",
             "result_subtitle_color_suffix": "（{color}）",
-            "error_search_title": "搜索图标失败"
+            "error_search_title": "搜索图标失败",
+            "download_title": "下载 Iconify 图标库",
+            "download_subtitle": "按回车把完整图标库{size}下载到本地缓存，完成后即可离线搜索。",
+            "download_action": "下载 Iconify 图标库{size}",
+            "download_size_suffix": "（{size}）",
+            "progress_starting_title": "正在下载 Iconify 图标",
+            "progress_starting_subtitle": "正在连接",
+            "progress_starting_action": "正在开始下载 Iconify 图标",
+            "progress_downloading_title": "正在下载 Iconify 图标",
+            "progress_downloading_subtitle": "{done} / {total}（{percent}%）",
+            "progress_downloading_action": "正在下载 Iconify 图标 {done} / {total}（{percent}%）",
+            "progress_downloading_unknown_subtitle": "{done}",
+            "progress_downloading_unknown_action": "正在下载 Iconify 图标 {done}",
+            "progress_verifying_title": "正在校验 Iconify 图标库",
+            "progress_verifying_subtitle": "正在校验压缩包",
+            "progress_verifying_action": "正在校验 Iconify 图标库",
+            "progress_indexing_title": "正在建立本地图标索引",
+            "progress_indexing_subtitle": "{done} / {total} 个图标集{detail}",
+            "progress_indexing_detail_suffix": " · {detail}",
+            "progress_indexing_action": "正在建立索引 {done} / {total}",
+            "download_failed_title": "Iconify 图标库下载失败",
+            "download_failed_subtitle": "{error}",
+            "download_retry_action": "重试下载 Iconify 图标库",
+            "download_ready_title": "Iconify 图标库已就绪",
+            "download_ready_subtitle": "输入图标名称即可本地搜索",
+            "download_ready_action": "Iconify 图标库已就绪",
+            "cache_unavailable_title": "Iconify 缓存不可用",
+            "cache_unavailable_subtitle": "{error}",
+            "query_hint_search": "搜索",
+            "refinement_palette": "颜色",
+            "refinement_palette_all": "全部",
+            "refinement_palette_color": "彩色",
+            "refinement_palette_mono": "黑白"
         }
     },
     "SupportedOS": [

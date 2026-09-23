@@ -42,7 +42,7 @@ build: lint format
 	cp image/* $(DIST_DIR)/image/
 
 test:
-	uv run python -m unittest tests/test_query.py
+	uv run python -m unittest discover -s tests
 
 publish: build
 	cd $(DIST_DIR) && zip -r ../wox.plugin.iconify.wox .

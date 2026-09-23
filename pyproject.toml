@@ -1,13 +1,18 @@
 [project]
 name = "iconify"
-version = "0.0.6"
+version = "0.1.0"
 description = "Search iconify icons - Home of open source icon sets"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["wox-plugin==0.0.70"]
+dependencies = [
+    "wox-plugin==0.0.86",
+]
 
 [project.optional-dependencies]
 dev = ["ruff", "mypy"]
 
 [tool.ruff]
 line-length = 140
+
+[tool.mypy]
+python_version = "3.10"
